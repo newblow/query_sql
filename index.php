@@ -9,10 +9,10 @@
 </head>
 <body>
     <header>
-        <nav>
+        <!-- <nav>
             <ul>
                 <li>
-                    <a href="./index.php">Accueil</a>
+                    <a href="./index.php">HOME USER</a>
                 </li>
                 <li>
                     <a href="./pages/users/show.php">Afficher</a>
@@ -30,11 +30,21 @@
         </nav>
         <nav>
             <ul>
-                <li> <a href="#">Home</a></li>
+                <li> <a href="#">HOME COURSE</a></li>
                 <li> <a href="./pages/courses/show.php">Read</a></li>
                 <li> <a href="./pages/courses/create.php">Create</a></li>
                 <li> <a href="./pages/courses/edit.php">Update</a></li>
                 <li> <a href="./pages/courses/delete.php">Delete</a></li>
+            </ul>
+        </nav> -->
+
+        <nav>
+            <ul>
+                <li> <a href="#">HOME COLLECTION RESERVATION</a></li>
+                <li> <a href="./pages/collections_reservation/show.php">Read</a></li>
+                <li> <a href="./pages/collections_reservation/create.php">Create</a></li>
+                <li> <a href="./pages/collections_reservation/edit.php">Update</a></li>
+                <li> <a href="./pages/collections_reservation/delete.php">Delete</a></li>
             </ul>
         </nav>
     </header>
