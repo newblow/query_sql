@@ -22,6 +22,11 @@
     
     <h1>Liste des utilisateurs</h1>
 
+    <form action="../../assets/php/controllers/crud_collections_reservation/show_courses.php" method="POST">
+        <label for="user_email">email utilisateur</label>
+        <input type="text" id="user_email" name="user_email">
+        <button type="submit">envoyer</button>
+    </form>
     <?php 
 
     require_once('../../assets/php/middleware/connect.php');

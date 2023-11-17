@@ -1,12 +1,13 @@
 <?php
   
-  require_once('./assets/php/middleware/connect.php');
-  $query_user_course = $db_connect->query('SELECT USER.*, courses.* FROM user_courses JOIN USER ON user_courses.user_id_courses = USER.email JOIN courses ON user_courses.courses_id_user = courses.category;');
-  ?>
-  <div class="container">
-      <?php
+  require_once('../../middleware/connect.php');
+  $user_log = $_POST['user_email'];
+
+  $query_user_courses = $db_connect->query("SELECT * FROM collections_reservation JOIN user ON collections_reservation.user_email = user.email WHERE user.email = '$user_log'" );
+
        foreach ($query_user_courses as $user_courses) {
+        echo 'Email Utilisateur connécter: '. $user_courses['user_email']. '<br>';
+        echo 'category'.$user_courses['courses_category']. '<br>'. '<br>'. '<br>';
   } 
-      ?>
-  </div>
+
 
