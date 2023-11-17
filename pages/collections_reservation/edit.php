@@ -22,59 +22,20 @@
 
     <h1>Editer un utilisateur</h1>
 
-    <form action="../../assets/php/controllers/crud_courses/update_courses.php" method="POST">
+    <form action="../../assets/php/controllers/crud_collections_reservation/update_courses.php" method="POST">
         <div>
             <label for="id">Id</label>
             <input type="text" id="id" name="id">
         </div>
+    
         <div>
-            <label for="title">title</label>
-            <input type="text" id="title" name="title">
+            <label for="email">email</label>
+            <input type="text" id="email" name="email">
         </div>
-        <div>
-            <label for="img">image</label>
-            <input type="text" id="image" name="img">
+        <label for="cours-category">category</label>
+            <input type="text" id="cours-category" name="cours-category">
         </div>
-        <div>
-            <label for="category">category</label>
-            <input type="category" id="category" name="category">
-        </div>
-        <div>
-            <label for="subscription">subscriptiony</label>
-            <input type="subscription" id="subscription" name="subscription">
-        </div>
-        <div>
-            <label for="chapter">chapter</label>
-            <input type="chapter" id="chapter" name="chapter">
-        </div>
-        <div>
-            <label for="alias">alias</label>
-            <input type="alias" id="alias" name="alias">
-        </div>
-        <div>
-            <label for="nom">nom</label>
-            <input type="nom" id="nom" name="nom">
-        </div>
-        <div>
-            <label for="prenom">prenom</label>
-            <input type="prenom" id="prenom" name="prenom">
-        </div>
-        <div>
-            <label for="age">age</label>
-            <input type="age" id="age" name="age">
-        </div>
-        <div>
-            <label for="zip">zip</label>
-            <input type="zip" id="zip" name="zip">
-        </div>
-        <div>
-            <label for="address">address</label>
-            <input type="address" id="address" name="address">
-        </div>
-        <div>
-            <label for="id">id</label>
-            <input type="id" id="ids" name="id">
-        </div>
+       
         
 
         <button type="submit">Envoyer</button>

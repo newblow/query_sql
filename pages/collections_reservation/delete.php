@@ -20,7 +20,7 @@
         </nav>
     </header>
 
-    <form action="../../assets/php/controllers/crud_courses/delete_courses.php" method="POST">
+    <form action="../../assets/php/controllers/crud_collections_reservation/delete_courses.php" method="POST">
         <div>
             <label for="id-delete">Id</label>
             <input type="text" id="id-delete" name="id-delete">
