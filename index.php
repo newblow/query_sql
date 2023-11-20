@@ -39,6 +39,7 @@
         </nav> -->
 
         <nav>
+        <a href="#">COLLECTION RESERVATION</a>
             <ul>
                 <li> <a href="#">HOME COLLECTION RESERVATION</a></li>
                 <li> <a href="./pages/collections_reservation/show.php">Read</a></li>
