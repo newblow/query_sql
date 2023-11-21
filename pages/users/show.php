@@ -10,22 +10,12 @@
 <body>
 <header>
         <nav>
-            <ul>
-                <li>
-                    <a href="../../index.php">Accueil</a>
-                </li>
-                <li>
-                    <a href="../users/show.php">Afficher</a>
-                </li>
-                <li>
-                    <a href="../users/create.php">Créer</a>
-                </li>
-                <li>
-                    <a href="../users/edit.php">Editer</a>
-                </li>
-                <li>
-                    <a href="../users/delete.php">Supprimer</a>
-                </li>
+            <ul class="nav">
+            <li> <a href="../../index.php">Home</a></li>
+                <li class="nav-items"> <a href="./show.php">Read</a></li>
+                <li class="nav-items"> <a href="./create.php">Create</a></li>
+                <li class="nav-items"> <a href="./edit.php">Update</a></li>
+                <li class="nav-items"> <a href="./delete.php">Delete</a></li>
             </ul>
         </nav>
     </header>

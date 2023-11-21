@@ -2,12 +2,12 @@
 
 require_once('../../middleware/connect.php');
 
-$id = $_POST['id'];
-$courses_category = $_POST['cours-category'];
-$email = $_POST['email'];
+$edit_user = $_POST['edit-user'];
+$edit_courses = $_POST['edit-courses'];
+$date = date($_POST['edit-date']);
 
 
 
-$db_connect->query("UPDATE collections_reservation SET user_email='$email', courses_category='$courses_category' WHERE collections_reservation.id=$id");
+$db_connect->query("UPDATE collections_reservation SET user_email='$edit_user', courses_title='$edit_courses', date='$date' WHERE collections_reservation.user_email = '$edit_user' ");
 
-header("Location: http://localhost/public/query_sql");
+header("Location: http://localhost/public/sportime-vanilla");

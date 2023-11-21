@@ -1,18 +1,46 @@
 body {
-  background-color: rgba(70, 22, 104, 0.371);
-}
-
-ul{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: rgba(11, 18, 48, 0.489);
   height: 100vh;
   width: 100%;
-  
 }
-a{
+
+h1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
   text-decoration:overline underline;
-  text-transform:uppercase;
-  
+  text-transform: uppercase;
+  color: rgba(5, 13, 11, 0.838);
+}
+
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-items {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.echo{
+  display:flex;
+  flex-direction: column;
+}
+input{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+middle{
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

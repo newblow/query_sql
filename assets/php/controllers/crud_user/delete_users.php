@@ -2,8 +2,8 @@
 
 require_once('../../middleware/connect.php');
 
-$id = $_POST['id-delete'];
+$delete_user = $_POST['delete-user'];
 
-$db_connect->query("DELETE FROM `user` WHERE user.id=$id");
+$db_connect->query("DELETE FROM `user` WHERE user.email= '$delete_user' ");
 
-header("Location: http://localhost/public/query_sql");
+header("Location: http://localhost/public/sportime-vanilla");

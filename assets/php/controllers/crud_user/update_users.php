@@ -2,11 +2,11 @@
 
 require_once('../../middleware/connect.php');
 
-$id = $_POST['id'];
+$edit_user = $_POST['edit-user'];
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $alias = $_POST['alias'];
 
-$db_connect->query("UPDATE user SET email='$email', password='$password', alias='$alias' WHERE user.id=$id");
+$db_connect->query("UPDATE user SET email='$email', password='$password', alias='$alias' WHERE user.email = '$edit_user' ");
 
-header("Location: http://localhost/public/query_sql");
+header("Location: http://localhost/public/sportime-vanilla");

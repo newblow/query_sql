@@ -10,22 +10,12 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li>
-                    <a href="../index.php">Accueil</a>
-                </li>
-                <li>
-                    <a href="../show.php">Afficher</a>
-                </li>
-                <li>
-                    <a href="../create.php">Créer</a>
-                </li>
-                <li>
-                    <a href="../edit.php">Editer</a>
-                </li>
-                <li>
-                    <a href="../delete.php">Supprimer</a>
-                </li>
+            <ul class="nav">
+            <li> <a href="../../index.php">Home</a></li>
+                <li class="nav-items"> <a href="./show.php">Read</a></li>
+                <li class="nav-items"> <a href="./create.php">Create</a></li>
+                <li class="nav-items"> <a href="./edit.php">Update</a></li>
+                <li class="nav-items"> <a href="./delete.php">Delete</a></li>
             </ul>
         </nav>
     </header>
@@ -33,10 +23,23 @@
     <h1>Editer un utilisateur</h1>
 
     <form action="../../assets/php/controllers/crud_user/update_users.php" method="POST">
-        <div>
-            <label for="id">Id</label>
-            <input type="text" id="id" name="id">
-        </div>
+    <select name="edit-user" id="edit-user">
+            <option value="">-- Choisir un utilisateur --</option>
+
+            <?php
+
+                require_once('../../assets/php/middleware/connect.php');
+
+                $users = $db_connect->query("SELECT user.email FROM user");
+
+                foreach ($users as $user) {
+                    $email = $user['email'];
+
+                    echo "<option value='$email'>$email</option>";
+                }
+
+            ?>
+        </select>
         <div>
             <label for="email">Email</label>
             <input type="text" id="email" name="email">

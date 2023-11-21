@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer un utilisateur</title>
+    <title>Créer un cours</title>
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <script src="../../assets/js/main.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li> <a href="#">Home</a></li>
-                <li> <a href="../courses/show.php">Read</a></li>
-                <li> <a href="../courses/create.php">Create</a></li>
-                <li> <a href="../courses/edit.php">Update</a></li>
-                <li> <a href="../courses/delete.php">Delete</a></li>
+            <ul class="nav">
+                <li class="nav-items"> <a href="../../index.php">Home</a></li>
+                <li class="nav-items"> <a href="./show.php">Read</a></li>
+                <li class="nav-items"> <a href="./create.php">Create</a></li>
+                <li class="nav-items"> <a href="./edit.php">Update</a></li>
+                <li class="nav-items"> <a href="./delete.php">Delete</a></li>
             </ul>
         </nav>
-    </header>
-    <form action="../../assets/php/controllers/crud_courses/create_courses.php" method="POST">
+    </header>-
+    <h1>Créer un cours</h1>
+
+    <form action="../../assets/php/controllers/crud_courses/create_courses.php" method="POST" class="middle">
         <div>
             <label for="title">titre</label>
             <input type="text" id="title" name="title">
@@ -29,8 +31,8 @@
             <input type="text" id="image" name="image">
         </div>
         <div>
-            <label for="category">Category</label>
-            <input type="category" id="category" name="category">
+            <label for="courses-category">Category</label>
+            <input type="category" id="courses-category" name="courses-category">
         </div>
         <div>
             <label for="subscription">Subscription</label>

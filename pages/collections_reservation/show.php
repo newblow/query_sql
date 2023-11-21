@@ -3,55 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afficher les utilisateurs</title>
+    <title>Afficher les réservations</title>
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <script src="../../assets/js/main.js"></script>
 </head>
 <body>
+
     <header>
         <nav>
-            <ul>
-                <li> <a href="#">Home</a></li>
-                <li> <a href="../courses/show.php">Read</a></li>
-                <li> <a href="../courses/create.php">Create</a></li>
-                <li> <a href="../pages/courses/edit.php">Update</a></li>
-                <li> <a href="../pages/courses/delete.php">Delete</a></li>
+            <ul class="nav" >
+            <li> <a href="../../index.php">Home</a></li>
+                <li class="nav-items"> <a href="./show.php">Read</a></li>
+                <li class="nav-items"> <a href="./create.php">Create</a></li>
+                <li class="nav-items"> <a href="./edit.php">Update</a></li>
+                <li class="nav-items"> <a href="./delete.php">Delete</a></li>
             </ul>
         </nav>
     </header>
     
-    <h1>Liste des utilisateurs</h1>
+    <h1 class="">Liste des réservations</h1>
 
-    <form action="../../assets/php/controllers/crud_collections_reservation/show_courses.php" method="POST">
-        <label for="user_email">email utilisateur</label>
-        <input type="text" id="user_email" name="user_email">
-        <button type="submit">envoyer</button>
-    </form>
     <?php 
 
     require_once('../../assets/php/middleware/connect.php');
 
-    $query_user_courses = $db_connect->query('SELECT USER.*, courses.* FROM user_courses JOIN USER ON user_courses.user_id_courses = USER.email JOIN courses ON user_courses.courses_id_user = courses.category');
+    $query_reservations = $db_connect->query('SELECT u.alias, c.title, cr.date FROM collections_reservation cr JOIN user u ON u.email = cr.user_email JOIN courses c ON c.title = cr.courses_title');
 
-    foreach ($query_user_courses as $user_courses) {
-      
-    
-        echo 'Email de l\'utilisateur: '.$user_courses['email']; 
-        echo 'pseudo de l\'utilisateur: '.$user_courses['alias'] .'<br/>'; 
-        echo 'Nom de l\'utilisateur: '.$user_courses['nom'] .'<br/>'; 
-        echo 'Prenom de l\'utilisateur: '.$user_courses['prenom'] .'<br/>'; 
-        echo 'Age de l\'utilisateur: '.$user_courses['age'] .'<br/>';
-        echo 'Code Postal de l\'utilisateur: '.$user_courses['zip'] .'<br/>';
-        echo 'Address de l\'utilisateur: '.$user_courses['address'] .'<br/>';
-        echo 'ID de l\'utilisateur: '.$user_courses['id'] .'<br/>'.'<br/>'; 
-
-        echo 'Titre de l\'utilisateur: '.$user_courses['title'] .'<br/>';
-        echo 'Image de l\'utilisateur: '.$user_courses['image'] .'<br/>';
-        echo 'Category de l\'utilisateur: '.$user_courses['category'] .'<br/>';
-        echo 'Abonnement de l\'utilisateur: '.$user_courses['subscription'] .'<br/>'; 
-        echo 'Chapitre de l\'utilisateur: '.$user_courses['chapter']  .'<br/>'.'<br/>'.'<br/>';   
-         
-
+    foreach ($query_reservations as $reservation) {
+        echo 'Pseudonyme de l\'utilisateur: ' . $reservation['alias'] .'<br/>'; 
+        echo 'Catégorie du cours: ' . $reservation['title'] .'<br/>'; 
+        echo 'Date: ' . $reservation['date'] .'<br/>'; 
     }
 
     ?>

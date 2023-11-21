@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afficher les utilisateurs</title>
+    <title>Afficher les cours</title>
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <script src="../../assets/js/main.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li> <a href="#">Home</a></li>
-                <li> <a href="../courses/show.php">Read</a></li>
-                <li> <a href="../courses/create.php">Create</a></li>
-                <li> <a href="../pages/courses/edit.php">Update</a></li>
-                <li> <a href="../pages/courses/delete.php">Delete</a></li>
+            <ul class="nav">
+                <li class=""> <a href="../../index.php">Home</a></li>
+                <li class="nav-items"> <a href="./show.php">Read</a></li>
+                <li class="nav-items"> <a href="./create.php">Create</a></li>
+                <li class="nav-items"> <a href="./edit.php">Update</a></li>
+                <li class="nav-items"> <a href="./delete.php">Delete</a></li>
             </ul>
         </nav>
     </header>
     
-    <h1>Liste des utilisateurs</h1>
+    <h1>Liste des cours</h1>
 
     <?php 
 
@@ -32,7 +32,7 @@
       
         echo $courses['title'] .'<br/>';
         echo $courses['image'] .'<br/>';
-        echo $courses['category'] .'<br/>';
+        echo $courses['courses_category'] .'<br/>';
         echo $courses['subscription'] .'<br/>'; 
         echo $courses['chapter'] .'<br/>';   
     }

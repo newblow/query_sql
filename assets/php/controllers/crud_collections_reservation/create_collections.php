@@ -2,11 +2,12 @@
 
 require_once('../../middleware/connect.php');
 
-$user_email = $_POST['user_email'];
-$courses_category = $_POST['courses_category'];
+$user_email = $_POST['create-user'];
+$courses_category = $_POST['create-courses'];
+$date = date($_POST['create-date']);
 
 
+$db_connect->query("INSERT INTO collections_reservation (id, user_email, courses_title, date) VALUES (NULL, '$user_email', '$courses_category', '$date')");
 
-$db_connect->query("INSERT INTO collections_reservation (id, user_email, courses_category) VALUES(NULL, '$user_email', '$courses_category')");
 
-header("Location: http://localhost/public/query_sql");
+header("Location: http://localhost/public/sportime-vanilla");

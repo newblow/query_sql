@@ -10,31 +10,36 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li>
-                    <a href="../../index.php">Accueil</a>
-                </li>
-                <li>
-                    <a href="../users/show.php">Afficher</a>
-                </li>
-                <li>
-                    <a href="../users/create.php">Créer</a>
-                </li>
-                <li>
-                    <a href="../users/edit.php">Editer</a>
-                </li>
-                <li>
-                    <a href="../users/delete.php">Supprimer</a>
-                </li>
+            <ul class="nav">
+            <li> <a href="../../index.php">Home</a></li>
+                <li class="nav-items"> <a href="./show.php">Read</a></li>
+                <li class="nav-items"> <a href="./create.php">Create</a></li>
+                <li class="nav-items"> <a href="./edit.php">Update</a></li>
+                <li class="nav-items"> <a href="./delete.php">Delete</a></li>
             </ul>
         </nav>
     </header>
 
+    <h1>Supprimer un utilisateur</h1>
+
     <form action="../../assets/php/controllers/crud_user/delete_users.php" method="POST">
-        <div>
-            <label for="id-delete">Id</label>
-            <input type="text" id="id-delete" name="id-delete">
-        </div>
+    <select name="delete-user" id="delete-user">
+            <option value="">-- Choisir un utilisateur --</option>
+
+            <?php
+
+                require_once('../../assets/php/middleware/connect.php');
+
+                $users = $db_connect->query("SELECT user.email FROM user");
+
+                foreach ($users as $user) {
+                    $email = $user['email'];
+
+                    echo "<option value='$email'>$email</option>";
+                }
+
+            ?>
+        </select>
         <button type="submit">Envoyer</button>
     </form>
 </body>
